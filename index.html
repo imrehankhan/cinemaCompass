@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Guide App</title>
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="search-container">
+        <input
+          type="text"
+          placeholder="Enter movie name heree..."
+          id="movie-name"
+          value="dark knight"
+        />
+        <button id="search-btn">Search</button>
+      </div>
+      <div id="result">
+        <div class="info">
+            <img src="https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg" class="poster">
+            <div>
+                <h2 class="movie-title">${data.Title}</h2>
+                <div class="rating">
+                    <img src="star-svgrepo-com.svg">
+                    <h4 class="imdb-rating">${data.imdbRating}</h4>
+                </div>
+                <div class="details">
+                    <span class="rated">${data.Rated}</span>
+                    <span class="year">${data.Year}</span>
+                    <span class="runtime">${data.Runtime}</span>
+                </div>
+                <div class="genre">
+                    <div class="genre">${data.Genre.split(",").join("</div><div>")}</div>
+                </div>
+            </div>
+        </div>
+        <h3>Plot:</h3>
+        <p class="plot">${data.Plot}</p>
+        <h3>Cast:</h3>
+        <p class="actors">${data.Actors}</p>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
